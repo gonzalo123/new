@@ -1,0 +1,22 @@
+{
+    "authors": [
+        {
+            "name": "Gonzalo Ayuso",
+            "email": "gonzalo123@gmail.com"
+        }
+    ],
+    "require": {
+        "pimple/pimple": "v1.0.2"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "3.7.24"
+    },
+    "config": {
+        "bin-dir": "bin"
+    },
+    "autoload": {
+        "psr-0": {
+            "": ["src/"]
+        }
+    }
+}
