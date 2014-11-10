@@ -1,7 +1,7 @@
 {
     "name": "gonzalo123/new",
     "keywords": ["pimple", "dependency injection", "container"],
-    "description": "Creating new instances auto injecting dependencies from a DIC",
+    "description": "Creating new instances auto injecting dependencies from a Pimple Container",
     "license":"MIT",
     "authors": [
         {
