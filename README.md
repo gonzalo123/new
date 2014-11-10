@@ -33,7 +33,7 @@ class Bar
     }
 }
 
-$container = new Pimple\Container();
+$container = new Pimple\Container   ();
 $container['name'] = "Gonzalo2";
 
 $builder = new G\Builder($container);

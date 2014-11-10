@@ -1,5 +1,8 @@
 {
     "name": "gonzalo123/new",
+    "keywords": ["pimple", "dependency injection", "container"],
+    "description": "Creating new instances auto injecting dependencies from a DIC",
+    "license":"MIT",
     "authors": [
         {
             "name": "Gonzalo Ayuso",
@@ -12,6 +15,11 @@
     "autoload": {
         "psr-4": {
             "G\\": "src/"
+        }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.0-dev"
         }
     }
 }
