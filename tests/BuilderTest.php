@@ -2,6 +2,8 @@
 
 use G\Builder;
 
+use Pimple\Container;
+
 include __DIR__ . "/fixtures/Foo.php";
 include __DIR__ . "/fixtures/Bar.php";
 include __DIR__ . "/fixtures/Another.php";
@@ -11,7 +13,7 @@ class BuilderTest extends \PHPUnit_Framework_TestCase
 {
     public function test_instance()
     {
-        $container = new Pimple();
+        $container = new Container();
         $builder = new Builder($container);
         /** @var Foo $foo */
         $foo = $builder->create('Foo');
@@ -21,7 +23,7 @@ class BuilderTest extends \PHPUnit_Framework_TestCase
 
     public function test_calling_function_with_arguments()
     {
-        $container = new Pimple();
+        $container = new Container();
         $builder = new Builder($container);
         /** @var Foo $foo */
         $foo = $builder->create('Foo');
@@ -32,7 +34,7 @@ class BuilderTest extends \PHPUnit_Framework_TestCase
 
     public function test_calling_function_with_arguments_from_container()
     {
-        $container = new Pimple();
+        $container = new Container();
         $container['name'] = 'Gonzalo';
         $builder = new Builder($container);
         /** @var Foo $foo */
@@ -44,7 +46,7 @@ class BuilderTest extends \PHPUnit_Framework_TestCase
 
     public function test_calling_function_with_arguments_from_container_namespaced()
     {
-        $container = new Pimple();
+        $container = new Container();
         $container['name'] = 'Gonzalo';
         $builder = new Builder($container);
         /** @var Baz\Foo $foo */
@@ -56,7 +58,7 @@ class BuilderTest extends \PHPUnit_Framework_TestCase
 
     public function test_instance_with_DI_in_constructor()
     {
-        $container = new Pimple();
+        $container = new Container();
         $builder = new Builder($container);
         /** @var Bar $bar */
         $bar = $builder->create('Bar', ['foo' => new Foo()]);
@@ -65,7 +67,7 @@ class BuilderTest extends \PHPUnit_Framework_TestCase
 
     public function test_call_with_DI_in_constructor()
     {
-        $container = new Pimple();
+        $container = new Container();
         $builder = new Builder($container);
         /** @var Bar $bar */
         $bar = $builder->create('Bar', ['foo' => new Foo()]);
@@ -77,7 +79,7 @@ class BuilderTest extends \PHPUnit_Framework_TestCase
 
     public function test_call_with_DI_in_constructor_with_parameters_from_container()
     {
-        $container = new Pimple();
+        $container = new Container();
         $container['name'] = 'Gonzalo';
         $container['Foo'] = function ($c) {
             return new Foo();
@@ -93,7 +95,7 @@ class BuilderTest extends \PHPUnit_Framework_TestCase
 
     public function test_call_with_DI_in_constructor_with_parameters_from_container_with_parameters_in_function_too()
     {
-        $container = new Pimple();
+        $container = new Container();
         $container['name'] = 'Gonzalo';
         $container['Foo'] = function () {
             return new Foo();

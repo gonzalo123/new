@@ -2,11 +2,13 @@
 
 namespace G;
 
+use Pimple\Container;
+
 class Builder
 {
     private $container;
 
-    function __construct(\Pimple $container)
+    function __construct(Container $container)
     {
         $this->container = $container;
     }
