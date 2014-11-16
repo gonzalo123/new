@@ -1,5 +1,7 @@
 Creating new instances auto injecting dependencies from a DIC
 
+[![Build Status](https://travis-ci.org/gonzalo123/new.svg)](https://travis-ci.org/gonzalo123/new)
+
 ```php
 class Foo
 {
